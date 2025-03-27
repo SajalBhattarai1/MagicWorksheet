@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Saved Worksheets - MagicSheets.ai</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="navdesign.css" />
+</head>
+<body>
+
+  <!-- Background & Blobs -->
+  <canvas id="magicCanvas"></canvas>
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-brand">MagicSheets.ai</a>
+    <div class="nav-links">
+      <a href="community.html">Community Sheets</a>
+      <a href="saved.html">Saved Sheets</a>
+      <a href="create.html">Create Sheet</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="logout.html" class="logout-btn">Logout</a>
+    </div>
+  </nav>
+
+  <!-- Main Section -->
+  <section class="community-section">
+    <h2 class="glow-title">📁 Your Saved Worksheets</h2>
+
+    <div class="card-grid">
+      {% for sheet in saved_worksheets %}
+      <div class="worksheet-card">
+        <div class="card-header">
+          <h3>{{ sheet.title }}</h3>
+          <p class="meta">💾 Saved on {{ sheet.saved_at|date:"M d, Y" }}</p>
+        </div>
+        <div class="card-details">
+          <p><strong>Subject:</strong> {{ sheet.subject }}</p>
+          <p><strong>Grade:</strong> {{ sheet.grade_level }}</p>
+          <p><strong>Topic:</strong> {{ sheet.topic }}</p>
+        </div>
+        <div class="card-actions">
+          <form method="POST" action="{% url 'unsave_worksheet' sheet.id %}">
+            {% csrf_token %}
+            <button type="submit" class="btn-icon danger">🗑️ Unsave</button>
+          </form>
+          <a href="{% url 'view_worksheet' sheet.id %}" class="btn btn-success">✨ View</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

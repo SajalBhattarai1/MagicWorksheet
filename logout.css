@@ -1,0 +1,244 @@
+/* === LOGOUT PAGE MAGIC CSS — STORYBOOK FANTASY VERSION === */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+body {
+    font-family: 'Poppins', serif;
+    background: linear-gradient(to top, #1e1e2f, #0a0a17);
+    color: #ffffff;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    animation: fadeInBody 2s ease-in-out;
+    background-size: cover;
+}
+
+@keyframes fadeInBody {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.logout-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.goodbye-title {
+    font-size: 2.7rem;
+    margin-bottom: 20px;
+    color: #fff4e6;
+    text-shadow: 0 0 8px #ffcb8e, 0 0 15px #ffefcc;
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+.farewell-text {
+    font-size: 1rem;
+    color: #dddddd;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.logout-quote {
+    font-family: 'Great Vibes', cursive;
+    color: #ffe3f5;
+    font-size: 1.3rem;
+    margin-bottom: 35px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid #ffb6f2;
+    animation: glowQuote 6s infinite alternate;
+}
+
+@keyframes glowQuote {
+    0% { text-shadow: 0 0 5px #ff8ee8; }
+    100% { text-shadow: 0 0 15px #ffb6f2; }
+}
+
+.redirect-note {
+    font-size: 0.95rem;
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+#countdown {
+    font-weight: bold;
+    color: #facc15;
+    font-size: 1.1rem;
+}
+
+.logout-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: bold;
+    position: relative;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 15px rgba(255,255,255,0.1);
+    border: 1px solid #ffb6f2;
+    color: #fff;
+}
+
+.return-btn {
+    background: linear-gradient(to right, #ffb6f2, #ffcb8e);
+    color: #111;
+}
+
+.cancel-btn {
+    background: rgba(255,255,255,0.08);
+    color: #ffe3f5;
+}
+
+.cancel-btn:hover {
+    background: #ffe3f5;
+    color: #111;
+}
+
+.rating-section {
+    margin-top: 35px;
+    text-align: center;
+    width: 100%;
+}
+
+.rate-prompt {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #ffe3f5;
+}
+
+.stars span {
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: #FFD700;
+    transition: transform 0.2s ease;
+    padding: 0 4px;
+}
+
+.stars span:hover,
+.stars span.selected {
+    transform: scale(1.3);
+    text-shadow: 0 0 8px #FFD700;
+}
+
+.thank-you {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: #FFDDEE;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+.nav-shortcuts {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-shortcuts .nav-link {
+    color: #c0f9ff;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.nav-shortcuts .nav-link:hover {
+    color: #ffb6f2;
+    text-shadow: 0 0 6px #ffb6f2;
+}
+
+/* Floating Feather */
+.feather {
+    position: absolute;
+    width: 60px;
+    top: -50px;
+    left: 20%;
+    animation: floatFeather 10s ease-in-out infinite;
+    opacity: 0.6;
+    z-index: 0;
+}
+
+@keyframes floatFeather {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translateY(120vh) rotate(360deg); opacity: 0; }
+}
+
+/* Flicker Glow Stars */
+.star {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    width: 2px;
+    height: 2px;
+    animation: starFlicker 3s infinite ease-in-out;
+    opacity: 0.4;
+}
+
+@keyframes starFlicker {
+    0%, 100% { opacity: 0.1; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+}
+
+/* Wand Easter Egg */
+#undo-spell {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.8rem;
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    padding: 12px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
+
+#undo-spell.show {
+    opacity: 1;
+    animation: pulseSpell 1.2s infinite ease-in-out;
+}
+
+@keyframes pulseSpell {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Canvas Backdrop */
+#logoutCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, #1e1e3f 0%, #0a0a17 100%);
+    z-index: 0;
+    pointer-events: none;
+}

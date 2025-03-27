@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Smart Worksheet | MagicSheets.ai</title>
+  <link rel="stylesheet" href="create.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="logo">✨ MagicSheets</div>
+      <div class="nav-buttons">
+        <button onclick="location.href='community.html'">Community Sheets</button>
+        <button onclick="location.href='savedsheets.html'">Saved Sheets</button>
+        <button onclick="location.href='create.html'">Create Sheet</button>
+        <button onclick="location.href='dashboard.html'">Dashboard</button>
+        <button class="logout">Logout</button>
+      </div>
+    </div>
+  </nav>
+  
+
+  <!-- Progress Bar -->
+  <div class="progress-container">
+    <div class="progress-bar" id="progress-bar"></div>
+    <div class="progress-steps">
+      <span class="step active">Assign</span>
+      <span class="step">Sources</span>
+      <span class="step">Configure</span>
+    </div>
+  </div>
+
+  <!-- Multi-step Form Container -->
+  <div class="form-wrapper">
+    <!-- Step 1: Assign to Lesson -->
+    <section class="form-step active" id="step-1">
+      <h2>Create Smart Worksheet</h2>
+      <p class="step-desc">Attach this resource to a course, unit, or lesson. <span class="optional">(recommended)</span></p>
+
+      <div class="form-group">
+        <label for="course">Associated Course</label>
+        <select id="course">
+          <option disabled selected>Select a course</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="unit">Associated Unit</label>
+        <select id="unit">
+          <option disabled selected>Select a unit</option>
+          <option>Create new unit...</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="lesson">Associated Lesson</label>
+        <select id="lesson">
+          <option disabled selected>Select a lesson</option>
+        </select>
+      </div>
+
+      <div class="form-actions">
+        <button class="btn next" data-next="step-2">Next →</button>
+      </div>
+    </section>
+
+    <!-- Step 2: Select Sources -->
+    <section class="form-step" id="step-2">
+      <h2>What should it be based on?</h2>
+      <p>You can submit topics, links, files, or curriculum standards as references.</p>
+
+      <div class="sources-options">
+        <button class="source-option">Topic of your choice</button>
+        <button class="source-option">A MagicSheets resource</button>
+        <button class="source-option">A link from internet</button>
+        <button class="source-option">A YouTube video</button>
+        <button class="source-option">A file upload</button>
+        <button class="source-option">Any text or excerpt</button>
+        <button class="source-option">Curriculum expectations</button>
+        <button class="source-option">Lesson objectives</button>
+      </div>
+
+      <div class="form-actions">
+        <button class="btn back" data-back="step-1">← Back</button>
+        <button class="btn next" data-next="step-3">Next →</button>
+      </div>
+    </section>
+
+    <section class="form-step" id="step-3">
+      <h2>How do you want your resource?</h2>
+      <p>We’re just moments away from creating it with your input!</p>
+    
+      <div class="config-grid">
+        <!-- Grade Level -->
+        <div class="config-card">
+          <label for="gradeLevel">Grade Level</label>
+          <select id="gradeLevel">
+            <option disabled selected>Select grade level</option>
+            <option>Grade 1</option>
+            <option>Grade 2</option>
+            <option>Grade 3</option>
+            <option>Grade 4</option>
+            <option>Grade 5</option>
+            <option>Grade 6</option>
+            <option>Grade 7</option>
+            <option>Grade 8</option>
+            <option>Grade 9</option>
+            <option>Grade 10</option>
+            <option>Grade 11</option>
+            <option>Grade 12</option>
+          </select>
+        </div>
+    <!-- Difficulty Level -->
+<div class="config-card">
+  <label for="difficulty">Difficulty Level</label>
+  <select id="difficulty">
+    <option disabled selected>Select difficulty</option>
+    <option>Easy</option>
+    <option>Medium</option>
+    <option>Hard</option>
+  </select>
+</div>
+
+        <!-- Question Types -->
+        <div class="config-card">
+          <label>Number of Questions by Type</label>
+          <div class="question-type-group">
+            <div class="question-card">
+              <label for="trueFalse">True/False</label>
+              <input type="number" id="trueFalse" min="0" max="25" value="0">
+            </div>
+            <div class="question-card">
+              <label for="fillBlank">Fill in the Blank</label>
+              <input type="number" id="fillBlank" min="0" max="25" value="0">
+            </div>
+            <div class="question-card">
+              <label for="multipleChoice">Multiple Choice</label>
+              <input type="number" id="multipleChoice" min="0" max="25" value="0">
+            </div>
+            <div class="question-card">
+              <label for="shortAnswer">Short Answer</label>
+              <input type="number" id="shortAnswer" min="0" max="25" value="0">
+            </div>
+          </div>
+          <div class="question-count-display">
+            Total Questions: <span id="totalCount">0</span>/25
+          </div>
+          <div class="question-limit-warning" id="questionWarning"></div>
+          <div class="question-progress-bar">
+            <div class="question-progress-fill" id="questionProgress"></div>
+          </div>
+        </div>
+    
+        <!-- Toggles -->
+        <div class="config-card horizontal">
+          <div>
+            <label>Include Answer Sheet?</label>
+            <div class="radio-group">
+              <label><input type="radio" name="includeAnswer" value="yes" checked> Yes</label>
+              <label><input type="radio" name="includeAnswer" value="no"> No</label>
+            </div>
+          </div>
+          <div>
+            <label>Make this worksheet public?</label>
+            <div class="radio-group">
+              <label><input type="radio" name="isPublic" value="no" checked> No (Private)</label>
+              <label><input type="radio" name="isPublic" value="yes"> Yes (Public)</label>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Instructions -->
+        <div class="config-card">
+          <label for="instructions">Additional Special Instructions</label>
+          <textarea id="instructions" rows="4" placeholder="Anything you’d like to add?"></textarea>
+        </div>
+      </div>
+    
+      <div class="form-actions">
+        <button class="btn back" data-back="step-2">← Back</button>
+        <button class="btn generate">⚡ Generate</button>
+      </div>
+    </section>
+
+<!-- Loading Modal -->
+<div id="loadingModal" class="loading-modal hidden">
+  <div class="loading-content">
+    <div class="magic-logo">MagicSheets</div>
+    <div class="progress-bar-wrapper">
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <div id="loading-percentage">0%</div>
+    </div>
+    <p class="loading-text">✨ Generating your smart worksheet...</p>
+  </div>
+</div>
+
+  <script src="create.js"></script>
+</body>
+</html>

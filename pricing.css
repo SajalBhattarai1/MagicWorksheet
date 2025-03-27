@@ -1,0 +1,226 @@
+/* === MAGIC PRICING PAGE CSS === */
+
+body, html {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #0f172a, #1e293b);
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
+  /* Navbar */
+  .navbar {
+    position: fixed;
+    width: 100%;
+    padding: 20px 40px;
+    background: rgba(15, 23, 42, 0.95);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+    z-index: 1000;
+  }
+  
+  .navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #00ffd5, #48CAE4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: 140px auto 80px;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    background: linear-gradient(to right, #48CAE4, #00ffd5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .container p {
+    color: #ccc;
+    margin-bottom: 40px;
+    font-size: 1rem;
+  }
+  
+  /* Pricing Grid */
+  .pricing-section .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .pricing-card {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 20px;
+    padding: 30px;
+    flex: 1;
+    min-width: 320px;
+    max-width: 360px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(72, 202, 228, 0.4);
+  }
+  
+  .pricing-card h3 {
+    font-size: 1.8rem;
+    color: #48CAE4;
+    margin-bottom: 10px;
+  }
+  
+  .pricing-card p {
+    font-size: 1rem;
+    opacity: 0.85;
+    margin-bottom: 15px;
+  }
+  
+  .pricing-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 25px;
+  }
+  
+  .pricing-card ul li {
+    font-size: 0.95rem;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #e0f7fa;
+  }
+  
+  .pricing-card ul li::before {
+    content: "✔";
+    color: #16A085;
+    font-weight: bold;
+  }
+  
+  .pricing-card ul li:nth-child(3):not(:has(b))::before,
+  .pricing-card ul li:nth-child(n+4):not(:has(b))::before {
+    content: "✖";
+    color: #f87171;
+  }
+  
+  .popular-plan {
+    border: 3px solid #16A085;
+    background: rgba(22, 160, 133, 0.15);
+    box-shadow: 0 0 25px rgba(22, 160, 133, 0.6);
+    position: relative;
+  }
+  
+  .popular-plan::after {
+    content: "Most Popular";
+    position: absolute;
+    top: 10px;
+    right: -30px;
+    background: #16A085;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 5px 15px;
+    transform: rotate(30deg);
+    box-shadow: 0 0 15px rgba(22, 160, 133, 0.7);
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    display: inline-block;
+  }
+  
+  .btn-primary {
+    background: linear-gradient(145deg, #00c2ff, #48CAE4);
+    color: black;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  }
+  
+  .btn-primary:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    transform: scale(1.05);
+  }
+  
+  .btn-success {
+    background: linear-gradient(145deg, #16A085, #1ABC9C);
+    color: white;
+  }
+  
+  .btn-success:hover {
+    background: #1ABC9C;
+    box-shadow: 0 0 15px rgba(22, 160, 133, 0.6);
+  }
+  
+  .btn-warning {
+    background: linear-gradient(145deg, #EAB308, #FACC15);
+    color: black;
+  }
+  
+  .btn-warning:hover {
+    background: #fef08a;
+    box-shadow: 0 0 15px rgba(234, 179, 8, 0.6);
+  }
+  
+  /* Special Offers */
+  .container > p:last-child {
+    margin-top: 40px;
+    font-size: 1rem;
+    color: #ccc;
+  }
+  
+  .container > p:last-child a {
+    color: #EAB308;
+    text-decoration: underline;
+  }
+  
+  .container > p:last-child a:hover {
+    color: #FACC15;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .pricing-section .row {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .pricing-card {
+      width: 90%;
+      max-width: none;
+    }
+  
+    .popular-plan::after {
+      top: -15px;
+      right: auto;
+      left: 50%;
+      transform: translateX(-50%) rotate(0deg);
+    }
+  }

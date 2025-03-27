@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | MagicSheets.ai</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">Magic Sheets</div>
+    <div class="nav-links">
+      <button onclick="location.href='create.html'">➕ Create</button>
+      <button onclick="location.href='savedsheets.html'">📂 Saved</button>
+      <button onclick="location.href='community.html'">🌍 Community</button>
+      <button class="logout">Logout</button>
+    </div>
+  </nav>
+
+  <!-- Welcome + Stats Summary -->
+  <header class="dashboard-header">
+    <h1>Welcome back, Sajal 👋</h1>
+    <p>Your worksheet magic awaits.</p>
+    <div class="quick-stats">
+      <div class="stat-card">✨ Worksheets Created: <strong>34</strong></div>
+      <div class="stat-card">📈 Views: <strong>1.2k</strong></div>
+      <div class="stat-card">❤️ Likes: <strong>480</strong></div>
+    </div>
+  </header>
+
+  <!-- Dashboard Cards -->
+  <section class="dashboard-widgets">
+    <div class="widget-card">
+      <h3>📊 Analytics</h3>
+      <canvas id="analyticsChart"></canvas>
+    </div>
+    <div class="widget-card">
+      <h3>🕓 Recent Activity</h3>
+      <ul>
+        <li><strong>My First Sheet</strong> — viewed 45 times</li>
+        <li><strong>Physics Worksheet</strong> — liked by 8 users</li>
+        <li><strong>Biology Quiz</strong> — saved to 3 accounts</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta">
+    <h2>🚀 Ready to create your next worksheet?</h2>
+    <button onclick="location.href='create.html'" class="create-btn">Start Creating</button>
+  </section>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

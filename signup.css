@@ -1,0 +1,223 @@
+/* === MAGIC SIGNUP PAGE CSS === */
+
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #0f172a, #1e293b);
+  color: #fff;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  width: 100%;
+  padding: 20px 40px;
+  background: rgba(15, 23, 42, 0.9);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  z-index: 1000;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #00ffd5, #48CAE4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Container */
+.container {
+  max-width: 480px;
+  margin: 120px auto 60px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Heading */
+h2 {
+  font-size: 2.2rem;
+  text-align: center;
+  background: linear-gradient(to right, #00ffd5, #48CAE4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+}
+
+/* Form */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+fieldset {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+legend {
+  font-size: 1.1rem;
+  color: #48CAE4;
+  font-weight: bold;
+  padding: 0 10px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  background: rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
+}
+
+/* Terms */
+.terms {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.terms a {
+  color: #48CAE4;
+  text-decoration: underline;
+}
+
+/* Button */
+.btn {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #7f00ff, #e100ff);
+  color: white;
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 25px rgba(255, 0, 255, 0.6);
+  transform: scale(1.05);
+}
+
+.btn-google {
+  background-color: #db4437;
+}
+
+.btn-facebook {
+  background-color: #3b5998;
+}
+
+.btn-apple {
+  background-color: #000000;
+}
+
+/* Login link */
+.login-link {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.login-link a {
+  color: #48CAE4;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Social Signup */
+.social-signup {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.social-signup p {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.social-buttons .btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid #48CAE4;
+  color: white;
+  transition: 0.3s;
+}
+
+.social-buttons .btn img {
+  height: 20px;
+}
+
+.social-buttons .btn:hover {
+  background: #48CAE4;
+  color: black;
+  box-shadow: 0 0 15px rgba(72, 202, 228, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    margin: 100px 20px 40px;
+    padding: 30px 20px;
+  }
+}

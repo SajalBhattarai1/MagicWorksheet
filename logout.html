@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Logging Out - MagicSheets.ai</title>
+  <link rel="stylesheet" href="logout.css" />
+</head>
+<body>
+  <!-- Background Magic -->
+  <canvas id="logoutCanvas"></canvas>
+  <div class="magic-circle"></div>
+
+  <!-- Hidden Easter Egg (Wand Cancel Spell) -->
+  <div id="undo-spell" title="Undo Logout Spell">🪄</div>
+
+  <!-- Logout UI -->
+<div class="logout-container">
+    <h1 class="goodbye-title" id="logout-text"></h1>
+    <p class="farewell-text">Thanks for crafting magic with <strong>MagicSheets.ai</strong> 🪶</p>
+  
+    <!-- Quote of the Day -->
+    <blockquote class="logout-quote" id="logout-quote">
+      "Magic is believing in yourself. If you can do that, you can make anything happen."
+    </blockquote>
+  
+    <!-- Countdown -->
+    <p class="redirect-note">Redirecting in <span id="countdown">7</span> seconds...</p>
+  
+    <!-- Manual Options -->
+    <div class="logout-actions">
+      <a href="Main.html" class="btn return-btn">🌈 Go Home Now</a>
+      <a href="dashboard.html" class="btn cancel-btn">🔮 Stay in the Realm</a>
+    </div>
+  
+    <!-- ✨ Rate Experience (MOVE HERE) -->
+    <div class="rating-section">
+      <p class="rate-prompt">Before you vanish... how was your experience?</p>
+      <div class="stars" id="ratingStars">
+        <span data-rate="1">⭐</span>
+        <span data-rate="2">⭐</span>
+        <span data-rate="3">⭐</span>
+        <span data-rate="4">⭐</span>
+        <span data-rate="5">⭐</span>
+      </div>
+      <p id="thankYouMsg" class="thank-you hidden">✨ Thanks for your feedback, wizard! 🧙‍♂️</p>
+    </div>
+  
+    <!-- 🔗 Quick Navigation Links (MOVE HERE) -->
+    <div class="nav-shortcuts">
+      <a href="create.html" class="nav-link">📝 Create a New Sheet</a>
+      <a href="dashboard.html" class="nav-link">📊 Go to Dashboard</a>
+      <a href="community.html" class="nav-link">🌍 Explore Community Sheets</a>
+    </div>
+  </div>
+  <!-- Audio Surprise (optional, plays soft sparkle sound) -->
+  <audio id="sparkle-sound" src="sounds/magic-logout.mp3" preload="auto"></audio>
+  <!-- Existing logout-container content here -->
+
+<!-- ✨ Rate Experience -->
+<div class="rating-section">
+    <p class="rate-prompt">Before you vanish... how was your experience?</p>
+    <div class="stars" id="ratingStars">
+      <span data-rate="1">⭐</span>
+      <span data-rate="2">⭐</span>
+      <span data-rate="3">⭐</span>
+      <span data-rate="4">⭐</span>
+      <span data-rate="5">⭐</span>
+    </div>
+    <p id="thankYouMsg" class="thank-you hidden">✨ Thanks for your feedback, wizard! 🧙‍♂️</p>
+  </div>
+  
+  <!-- 🔗 Quick Navigation Links -->
+  <div class="nav-shortcuts">
+    <a href="create.html" class="nav-link">📝 Create a New Sheet</a>
+    <a href="dashboard.html" class="nav-link">📊 Go to Dashboard</a>
+    <a href="community.html" class="nav-link">🌍 Explore Community Sheets</a>
+  </div>
+  
+
+  <script src="logout.js"></script>
+</body>
+</html>

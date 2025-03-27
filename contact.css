@@ -1,0 +1,151 @@
+/* === MAGIC CONTACT PAGE CSS === */
+
+body {
+    background: linear-gradient(135deg, #0F172A, #1E293B);
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header Section */
+  .contact-header {
+    padding: 100px 20px 50px;
+    background: radial-gradient(circle, rgba(0, 255, 213, 0.12), transparent);
+    text-align: center;
+  }
+  .contact-header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #00ffd5, #4ADEDE);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  .contact-header p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    margin-top: 10px;
+  }
+  
+  /* Contact Form Box */
+  .contact-form {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    transition: all 0.4s ease;
+  }
+  .contact-form:hover {
+    box-shadow: 0 0 35px rgba(0, 255, 255, 0.3);
+  }
+  .contact-form h3 {
+    color: #00ffd5;
+    margin-bottom: 30px;
+  }
+  
+  /* Form Inputs */
+  .contact-form .form-label {
+    color: #ccc;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+  }
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: #00ffd5;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+  }
+  
+  /* Submit Button */
+  .contact-form button {
+    background: linear-gradient(to right, #00ffd5, #4ADEDE);
+    color: #000;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .contact-form button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+  }
+  
+  /* Social Icons Section */
+  .social-contact p {
+    margin-top: 30px;
+    font-size: 1rem;
+    opacity: 0.8;
+  }
+  .social-icons {
+    margin-top: 10px;
+  }
+  .social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    color: #00ffd5;
+    font-size: 20px;
+    transition: all 0.4s ease;
+    position: relative;
+  }
+  .social-icons a::after {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    border-radius: 50%;
+    border: 2px dashed rgba(0, 255, 255, 0.2);
+    animation: rotate 4s linear infinite;
+    top: -10%;
+    left: -10%;
+  }
+  .social-icons a:hover {
+    background: #00ffd5;
+    color: #0F172A;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 40px 20px;
+    background: #0F172A;
+    text-align: center;
+    color: #ccc;
+  }
+  .footer a {
+    color: #48CAE4;
+    text-decoration: underline;
+  }
+  .footer a:hover {
+    color: #00ffd5;
+  }
+  
+  /* Animations */
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .contact-form {
+      padding: 25px;
+    }
+    .contact-header h1 {
+      font-size: 2.2rem;
+    }
+  }
+  
